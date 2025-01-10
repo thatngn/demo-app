@@ -32,7 +32,7 @@ with st.sidebar:
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
-    st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "👋 Hello. How may I assist you today?"}]
 
 # Display or clear chat messages
 for message in st.session_state.messages:
@@ -40,7 +40,7 @@ for message in st.session_state.messages:
         st.write(message["content"])
 
 def clear_chat_history():
-    st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "👋 Hello. How may I assist you today?"}]
 st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
 # Function for generating LLaMA2 response. 
