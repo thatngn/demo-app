@@ -9,7 +9,7 @@ st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 with st.sidebar:
     st.title('🦙💬 Llama 2 Chatbot')
     if 'REPLICATE_API_TOKEN' in st.secrets:
-        st.success('Let's explore the AI assitant!', icon='️:sparkles:')
+        st.success('Let's explore the AI assitant!', icon='️✨')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
         replicate_api = st.text_input('Enter Replicate API token:', type='password')
