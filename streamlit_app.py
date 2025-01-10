@@ -3,13 +3,13 @@ import replicate
 import os
 
 # App title
-st.set_page_config(page_title="🦙💬 Llama AI Chatbot")
+st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
 # Replicate Credentials
 with st.sidebar:
-    st.title('🦙💬 Llama AI Chatbot')
+    st.title('🦙💬 Llama 2 Chatbot')
     if 'REPLICATE_API_TOKEN' in st.secrets:
-        st.success('Let's explore the AI assitant!', icon='️✨')
+        st.success('API key already provided!', icon='✨')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
         replicate_api = st.text_input('Enter Replicate API token:', type='password')
