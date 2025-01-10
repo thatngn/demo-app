@@ -1,6 +1,6 @@
 # 📦 Streamlit App Starter Kit 
 ```
-⬆️ (Replace above with your app's name)
+Llama Chatbot
 ```
 
 Chatbot app provides a user-friendly interface for interacting with Llama 2 AI models via the Replicate API. This application is designed to facilitate seamless conversations, allowing users to explore the capabilities of cutting-edge AI in real-time.
