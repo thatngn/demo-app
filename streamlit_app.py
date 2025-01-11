@@ -20,14 +20,16 @@ with st.sidebar:
     os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
     st.subheader('Models and parameters')
-    selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-7B', 'Llama2-13B'], key='selected_model')
-    if selected_model == 'Llama2-7B':
+    selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-70B', 'Llama2-13B'], key='selected_model')
+    if selected_model == 'Llama2-70B':
         llm = 'meta/llama-2-70b-chat'
     elif selected_model == 'Llama2-13B':
         llm = 'meta/llama-2-13b-chat'
-    temperature = st.sidebar.slider('temperature', min_value=0.01, max_value=1.0, value=0.1, step=0.01)
-    top_p = st.sidebar.slider('top_p', min_value=0.01, max_value=1.0, value=0.9, step=0.01)
-    max_length = st.sidebar.slider('max_length', min_value=32, max_value=128, value=120, step=8)
+    else:
+        llm = 'meta/llama-2-13b-chat'
+    temperature = st.sidebar.slider('temperature', min_value=0.01, max_value=1.0, value=0.1, step=0.01,  help="Kiểm soát mức độ ngẫu nhiên khi tạo văn bản. Giá trị thấp giúp văn bản tập trung hơn, giá trị cao giúp sáng tạo hơn.")
+    top_p = st.sidebar.slider('top_p', min_value=0.01, max_value=1.0, value=0.9, step=0.01,help="Kiểm soát tập hợp từ có xác suất tích lũy được mô hình xem xét. Giá trị thấp giúp tạo văn bản tập trung hơn, giá trị cao tăng tính đa dạng.")
+    max_length = st.sidebar.slider('max_length', min_value=32, max_value=128, value=120, step=8, help="Độ dài tối đa của văn bản được tạo. Giới hạn số lượng từ/ký tự để tránh tạo văn bản quá dài.")
 
 
 # Store LLM generated responses
